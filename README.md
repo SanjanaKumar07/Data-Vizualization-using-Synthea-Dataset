@@ -1,5 +1,5 @@
 # Data-Vizualization-using-Synthea-Dataset
-**Tableau Dashboard Link** - 
+**Tableau Dashboard Link** - https://public.tableau.com/app/profile/sanjana.kumar6755/viz/SyntheaHealthcareDataVisualization/FinalWorksheet?publish=yes
 ## Workflow 
 1)  Data Generation Process: Synthea Dataset
 - Generated a synthetic dataset containing 11,410 patient records across the state of Washington.
