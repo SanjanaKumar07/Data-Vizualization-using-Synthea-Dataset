@@ -10,6 +10,7 @@ java -jar synthea-with-dependencies.jar
 java -jar synthea-with-dependencies.jar -p 10000 Washington --exporter.csv.export=true -s 777
 ```
 - Captured successful data download.
+- If you want to download the files please find it here : https://drive.google.com/drive/folders/1xHn_TbvJH6r-b0GMcq6K-L3wzpWXLGmw?usp=sharing
 ```
 Running with options:
 Population: 10000
@@ -29,12 +30,17 @@ Clinician RNG=5160
 - Identified relevant tables based on the specific questions to be answered.
 3)  Data Cleaning Process: Python
 -	Checked for null values and duplicates in relevant files to identify discrepancies in the data.
--	Jupyter Notebook path : output/csv/app.ipynb
+-	Jupyter Notebook path : csv/app.ipynb
 ![image](https://github.com/user-attachments/assets/4c015421-894a-406e-97f6-7d4b43fa4471)
 4) Data Visualization: Tableau
 - Combined tables appropriately to ensure accurate and meaningful visualizations.
 - Created visualizations tailored to address each specific question.
 - Developed calculated fields for key variables using custom formulas.
+  
+## Features of the Dashboard
+- Dashboard can be filtered across age group and gender
+- Hover over each metric to see a tooltip with information
+- All values in the output were cross verified with excel values using pandas (Jupyter Notebook path : csv/app.ipynb)
 
 ## Visualization Details
 
@@ -61,6 +67,11 @@ Clinician RNG=5160
   - https://github.com/synthetichealth/synthea/issues/403
   - https://stackoverflow.com/questions/tagged/hl7-fhir?page=10&sort=Votes&pageSize=50
   - https://pmc.ncbi.nlm.nih.gov/articles/PMC6416981/
+    
+## Assumptions made in the process:
+- Manually compiled a list of psychiatric diagnoses and applied a filtering process to refine the data.
+- Incorporated data from both deceased and living individuals for a comprehensive analysis.
+- Assessed whether treatment was given for the following diagnosis without specifically verifying if the medication was classified as an "anti-depressant."
 
 ## References 
 https://github.com/synthetichealth/synthea/wiki/Basic-Setup-and-Running
