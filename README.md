@@ -29,6 +29,7 @@ Clinician RNG=5160
 - Identified relevant tables based on the specific questions to be answered.
 3)  Data Cleaning Process: Python
 -	Checked for null values and duplicates in relevant files to identify discrepancies in the data.
+-	Jupyter Notebook path : output/csv/app.ipynb
 ![image](https://github.com/user-attachments/assets/4c015421-894a-406e-97f6-7d4b43fa4471)
 4) Data Visualization: Tableau
 - Combined tables appropriately to ensure accurate and meaningful visualizations.
