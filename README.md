@@ -1,5 +1,6 @@
 # Data-Vizualization-using-Synthea-Dataset
 **Tableau Dashboard Link** - https://public.tableau.com/app/profile/sanjana.kumar6755/viz/SyntheaHealthcareDataVisualization/FinalWorksheet?publish=yes
+
 ## Workflow 
 1)  Data Generation Process: Synthea Dataset
 - Generated a synthetic dataset containing 11,410 patient records across the state of Washington.
@@ -38,7 +39,6 @@ Clinician RNG=5160
 - Developed calculated fields for key variables using custom formulas.
   
 ## Features of the Dashboard
-- Dashboard can be filtered across age group and gender
 - Hover over each metric to see a tooltip with information
 - All values in the output were cross verified with excel values using pandas (Jupyter Notebook path : csv/app.ipynb)
 
