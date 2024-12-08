@@ -40,7 +40,7 @@ Clinician RNG=5160
   
 ## Features of the Dashboard
 - Hover over each metric to see a tooltip with information
-- All values in the output were cross verified with excel values using pandas (Jupyter Notebook path : csv/app.ipynb)
+- All values in the output were cross verified with excel values using pandas (Jupyter Notebook path : csv/app.ipynb and csv/new_app.ipynb)
 
 ## Visualization Details
 
@@ -61,13 +61,26 @@ Clinician RNG=5160
 1.	Key takeaways from depression treatment analysis
 2.	Number of patients who did not receive antidepressant treatment withing the first 90 days of diagnosis according to age and gender
 3.	Patient information of people who did not receive antidepressant treatment withing the first 90 days of diagnosis with date difference
-#### Bonus: CPT Code Utilization:
+#### Bonus: CPT Code Utilization (procedures.csv, conditions.csv):
+1. Frequency of CPT codes used in patients with psychiatric-related ICD-10 codes.
+2. Frequency of CPT codes used in patients with the procedure names.
+
+Process : 
+1. Getting all the encounters related to psychiatric condition descriptions. I did this by applying the filter on descriptions of conditions and getting the list of unique encounter ids. (Python)
+2. After this, I took a look in the procedures table to find all the procedures done for these encounter ids that were related to psychiatric conditions and noted down the descriptions of these procedures. (Python)
+3. I researched on ways to find the mapping from SNOMED of procedures to CPT codes but all the tools I found for this were paid so I just got the CPT codes for these descriptions manually from a couple of quick google searches. (Python)
+4. Now that I had a mapping from description of the procedures to CPT codes, I ran a small piece of code that generated a new csv file 'CPT_DATA' where I include all the procedure descriptions and the CPT Codes. (Python)
+5. Using the new csv file, I plotted a histogram plot to represent the frequency of the CPT codes. (Tableau)
 - Researched multiple resources to gain more information on how to use the existing data for CPT codes and ICT-10 code
 - References used for the research
   - https://github.com/synthetichealth/synthea/issues/403
   - https://stackoverflow.com/questions/tagged/hl7-fhir?page=10&sort=Votes&pageSize=50
   - https://pmc.ncbi.nlm.nih.gov/articles/PMC6416981/
-    
+  - SNOMED to ICD-10: https://www.nlm.nih.gov/research/umls/mapping_projects/snomedct_to_icd10cm.html
+  -  SNOMED to CPT: https://www.findacode.com/tools/map-a-code/snomed-cpt.php
+  -  SNOMED to CPT: https://forums.ohdsi.org/t/mapping-icd10pcs-and-cpt-procedure-codes-to-snomed/18402
+  -  SNOMED to CPT: https://confluence.hl7.org/download/attachments/144977510/AMA%20-%20SNOMED-CPT%20Mappings%20-%20Prior%20Auth.pptx?version=1&modificationDate=1670619604248&api=v2  
+
 ## Assumptions made in the process:
 - Manually compiled a list of psychiatric diagnoses and applied a filtering process to refine the data.
 - Incorporated data from both deceased and living individuals for a comprehensive analysis.
